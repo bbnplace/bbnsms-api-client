@@ -110,10 +110,11 @@ class SMSClient
 
     private function getCredentials()
     {
-        if (!file_exists(__DIR__."/../".self::$credentialSource)) {
+        $pathway = strstr(__DIR__, 'vendor/bbnsms/sms-api-client') ? "/../../../../" : "/../";
+        if (!file_exists(__DIR__.$pathway.self::$credentialSource)) {
             throw new Exception("Credential File not found. Please create file .bbnsms.json at your application root folder. Kindly refer to readme file for guide.", "BSE10055");
         } else {
-            return file_get_contents(__DIR__."/../".self::$credentialSource);
+            return file_get_contents(__DIR__.$pathway.self::$credentialSource);
         }
     }
 }

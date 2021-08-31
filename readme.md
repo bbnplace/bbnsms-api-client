@@ -4,9 +4,24 @@
 
 
 **Setup**
-1. Import Library into your project with composer by requiring bbnsms/bbnsms
-2. Install the library by typing composer install
-3. Create a .bbnsms.json file in your app root directory. Paste your login credentials as follows
+1. Using Composer
+Make sure you have downloaded and installed composer for your project. You can either require the bbnsms api client into your project by typing
+```
+"bbnsms/sms-api-client": "dev-master"
+```
+in the require attribute of your composer.json file followed by  running
+```
+composer install
+```
+on your terminal. Or you could simply run
+```
+composer require bbnsms/sms-api-client
+```
+on your terminal. This will install bbnsms and all it's dependencies into our vendor directory.
+
+
+1. Install the library by typing composer install
+2. Create a .bbnsms.json file in your app root directory. Paste your login credentials as follows
 
 ```
 {
