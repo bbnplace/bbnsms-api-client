@@ -1,3 +1,24 @@
+**Pre-requisites**
+1. Create a BBN SMS Account at https://bbnsms.com (Note: this will redirect to https://sms.bbnplace.com)
+2. Register your Sender Names for Approval. (This is a regulatory step. Sender name approval may take 24 - 48 hours. While you await the approval, let's proceed with the setup.
+
+
+**Setup**
+1. Import Library into your project with composer by requiring bbnsms/bbnsms
+2. Install the library by typing composer install
+3. Create a .bbnsms.json file in your app root directory. Paste your login credentials as follows
+
+```
+{
+    "access": {
+        "credentials": {
+            "username": "me@company.com",
+            "password": "aWe$0mePas5word"
+        }
+    }
+}
+```
+
 **Login Types**
 There are two supported values for login types: **credentials** and **apiKey** The credential login type will requires you to specify your username and password while the API Key method requires that you generate an API key on BBN SMS Developer Platform. If API Key based account, you are required to input the generated key into the **config.json** file.
 

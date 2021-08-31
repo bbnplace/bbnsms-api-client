@@ -1,21 +1,44 @@
 {
+    "base": "https://sms.bbnplace.com/bulksms",
+    "serviceAPIs": "https://sms.bbnplace.com/bulksms/endpoints.json",
     "endpoints": {
         "sending": {
             "endpoint": "bulksms.php",
-            "params": "username:password:sender:message:mobile"
+            "params": {
+                "username": "",
+                "password": "%s",
+                "sender": "%s",
+                "message": "%s",
+                "mobile": "%s",
+                "flash": ""
+            }
         },
         "balance": {
             "endpoint": "acctbals.php",
-            "params": "username:password"
+            "params": "username=%s&password=%s"
         },
         "schedule": {
             "endpoint": "bulksms.php",
-            "params": "username:password:schedule=1:broadcast_time:schedule_name:schedule_notification"
+            "params": {
+                "username": "",
+                "password": "%s",
+                "sender": "%s",
+                "message": "%s",
+                "mobile": "%s",
+                "flash": "",
+                "schedule": "",
+                "broadcast_time": "",
+                "schedule_name": "",
+                "schedule_notification": ""
+            }
         },
         "testCredential": {
             "endpoint": "login.php",
-            "params": "username:password"
+            "params": "username=%s&password=%s"
         }
     },
-    "loginType": ""
+    "loginType": "",
+    "version": "0.0.1",
+    "lastUpdateCheck": "",
+    "updateInterval": 86400
 }
