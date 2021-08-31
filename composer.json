@@ -1,13 +1,14 @@
 {
-    "name": "bbnsms/bbnsms",
-    "description": "A PHP Library for sending sms over the bbn sms api",
+    "name": "bbnsms/sms-api-client",
+    "description": "A PHP package for sending sms over the bbn sms gateway",
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     },
     "authors": [
         {
             "name": "Godwin Noah",
-            "email": "godwin.noah@bbnplace.com"
+            "email": "godwin.noah@bbnplace.com",
+            "homepage": "https://godwinnoah.com"
         }
     ],
     "autoload": {
@@ -19,5 +20,7 @@
     "require": {
         "php": ">=7.4",
         "rmccue/requests": ">=1.8"
-    }
+    },
+    "license": "MIT",
+    "type": "package"
 }
