@@ -33,7 +33,7 @@ class SMSClient
      * @param integer $flash
      * @return string
      */
-    public function send(string $message, string $originator, array $recipients, int $flash=0): string
+    public function send(string $message, string $originator, array $recipients, bool $flash=false): string
     {
         $fullEndpoint = sprintf("%s/%s", $this->endpointData->base, $this->endpointData->endpoints->sending->endpoint);
         $params = json_decode(json_encode($this->endpointData->endpoints->sending->params), true);
@@ -42,7 +42,7 @@ class SMSClient
         $params['sender'] = $originator;
         $params['message'] = $message;
         $params['mobile'] = implode(",", $recipients);
-        $params['flash'] = $flash;
+        $params['flash'] = (int) $flash;
         $response = Requests::post($fullEndpoint, [], $params);
         return $response->body;
     }
@@ -58,7 +58,7 @@ class SMSClient
      * @param integer $flash
      * @return string
      */
-    public function schedule(int $broadcastTime, string $scheduleName, string $message, string $originator, array $recipients, int $flash=0): string
+    public function schedule(int $broadcastTime, string $scheduleName, string $message, string $originator, array $recipients, bool $flash=false): string
     {
         $fullEndpoint = sprintf("%s/%s", $this->endpointData->base, $this->endpointData->endpoints->schedule->endpoint);
         $params = json_decode(json_encode($this->endpointData->endpoints->schedule->params), true);
@@ -67,7 +67,7 @@ class SMSClient
         $params['sender'] = $originator;
         $params['message'] = $message;
         $params['mobile'] = implode(",", $recipients);
-        $params['flash'] = $flash;
+        $params['flash'] = (int) $flash;
         $params['schedule'] = $originator;
         $params['broadcast_time'] = $broadcastTime;
         $params['schedule_name'] = $scheduleName;
